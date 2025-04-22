@@ -1,0 +1,35 @@
+{
+  "article": [],
+  "blog": [],
+  "collection": [],
+  "company": [],
+  "company_location": [],
+  "location": [],
+  "market": [],
+  "order": [],
+  "page": [],
+  "product": [
+    {
+      "key": "video-game-genre",
+      "namespace": "shopify",
+      "name": "Video game genre",
+      "description": "Classifies the type of video game, such as family or survival",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "video-game-platform",
+      "namespace": "shopify",
+      "name": "Video game platform",
+      "description": "Specifies the platform a video game is compatible with, such as PC or PlayStation 5",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
+  "variant": [],
+  "shop": []
+}
