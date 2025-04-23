@@ -3595,3 +3595,7 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.thumbnail-list__item.slider__slide:first-child {
+  display: none;
+}
