@@ -49,6 +49,12 @@
         "show_text_below": false
       }
     },
+    "swiper-bestsellers": {
+      "type": "swiper-slider-collection",
+      "settings": {
+        "collection": "bestsellers"
+      }
+    },
     "featured_collection_Cw8aLJ": {
       "type": "featured-collection",
       "name": "Bestsellers",
@@ -110,6 +116,7 @@
   },
   "order": [
     "image_banner",
+    "swiper-bestsellers",
     "featured_collection_Cw8aLJ",
     "featured_collection"
   ]
