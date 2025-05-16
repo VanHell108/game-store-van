@@ -3,24 +3,26 @@
 
 {{ 'swiper-slider.css' | asset_url | stylesheet_tag }}
 
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    {% for product in related_products %}
-      {% if product.id != current_product.id and product.tags contains current_product.tags[0] %}
-        <div class="swiper-slide">
-          <a href="{{ product.url }}">
-            <img
-              src="{{ product.featured_image | image_url: height: 1000 }}"
-              alt="{{ product.title }}"
-              width="100%"
-              height="auto"
-              loading="lazy"
-            >
-            <p>{{ product.title }}</p>
-          </a>
-        </div>
-      {% endif %}
-    {% endfor %}
+<div class="swiper-wrapper-container">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for product in related_products %}
+        {% if product.id != current_product.id and product.tags contains current_product.tags[0] %}
+          <div class="swiper-slide">
+            <a href="{{ product.url }}">
+              <img
+                src="{{ product.featured_image | image_url: height: 1000 }}"
+                alt="{{ product.title }}"
+                width="100%"
+                height="auto"
+                loading="lazy"
+              >
+              <p>{{ product.title }}</p>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
