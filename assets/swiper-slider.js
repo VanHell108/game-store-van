@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
    new Swiper('.mySwiper', {
      spaceBetween: 30,
      slidesPerView: 'auto',
+     loop: true,
      breakpoints: {
        0: { slidesPerView: 1 },
        600: { slidesPerView: 2 },

@@ -1,10 +1,16 @@
 {% assign current_product = product %}
 {% assign related_products = section.settings.collection.products %}
-
 {{ 'swiper-slider.css' | asset_url | stylesheet_tag }}
 
 <div class="swiper-wrapper-container">
   <div class="swiper mySwiper">
+    {% if section.settings.related_swiper_title != blank %}
+      <div>
+        <h1 class="swiper-title">
+          {{ section.settings.related_swiper_title }}
+        </h1>
+      </div>
+    {% endif %}
     <div class="swiper-wrapper">
       {% for product in related_products %}
         {% if product.id != current_product.id and product.tags contains current_product.tags[0] %}
@@ -35,6 +41,12 @@
 {
   "name": "Slider Related Products",
   "settings": [
+    {
+      "type": "text",
+      "id": "related_swiper_title",
+      "label": "Slider Title",
+      "default": "You Might Also Like"
+    },
     {
       "type": "collection",
       "id": "collection",

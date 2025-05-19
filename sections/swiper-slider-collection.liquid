@@ -5,6 +5,13 @@
 
     <div class="swiper-wrapper-container">
       <div class="swiper mySwiper">
+        {% if section.settings.swiper_title != blank %}
+          <div>
+            <h1 class="swiper-title">
+              {{ section.settings.swiper_title }}
+            </h1>
+          </div>
+        {% endif %}
         <div class="swiper-wrapper">
           {% for product in products limit: 10 %}
             <div class="swiper-slide">
@@ -35,6 +42,12 @@
 {
   "name": "Slider Collection",
   "settings": [
+    {
+      "type": "text",
+      "id": "swiper_title",
+      "label": "Slider Title",
+      "default": "Featured Collection"
+    },
     {
       "type": "collection",
       "id": "collection",
