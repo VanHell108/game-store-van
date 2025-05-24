@@ -140,6 +140,7 @@
                 {{- 'products.product.on_sale' | t -}}
               </span>
             {%- endif -%}
+            {% render 'bestseller-badge', product: card_product %}
           </div>
         </div>
       </div>

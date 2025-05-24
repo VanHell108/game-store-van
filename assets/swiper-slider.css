@@ -50,6 +50,11 @@ body {
   position: relative;
 }
 
+.swiper-slide div {
+  position: relative;
+  display: inline-block;
+}
+
 .swiper-slide a {
   text-decoration: none;
 }
