@@ -1,25 +1,18 @@
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
 .swiper-wrapper-container {
   padding: 32px 0px;
+  position: relative;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .swiper .swiper-title {
   padding: 0px;
   margin: 0px 0px 30px;
+}
+
+.swiper .swiper-slide {
+  height: auto;
 }
 
 .swiper {
@@ -32,57 +25,6 @@ body {
   overflow: hidden;
   position: relative;
   max-width: var(--page-width);
-}
-
-.swiper-wrapper .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background-color: #242833;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  flex-shrink: 0;
-  width: auto;
-  border-radius: 5%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.swiper-slide div {
-  position: relative;
-  display: inline-block;
-}
-
-.swiper-slide a {
-  text-decoration: none;
-}
-
-.swiper-slide p {
-  text-align: center;
-  color: white;
-  padding: 0 10px;
-  margin: 10px;
-  max-width: 450px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.swiper-slide img {
-  display: block;
-  object-fit: cover;
-  border-radius: 5% 5% 0% 0%;
-  overflow: hidden;
-}
-
-.swiper-wrapper-container {
-  position: relative;
-  width: 100%;
-  max-width: 90%;
-  margin: 0 auto;
 }
 
 .swiper-wrapper-container .swiper-button-next,
@@ -117,4 +59,43 @@ body {
     width: 35px;
     height: 35px;
   }
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .media {
+  width: 100%;
+  top: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.card__content {
+  display: grid;
+  padding: 1rem;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.card__information {
+  grid-row-start: 2;
+  padding: 1.3rem 1rem;
+}
+
+.card__heading {
+  margin-top: 0;
+  margin-bottom: 0;
 }

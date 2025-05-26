@@ -1,0 +1,11 @@
+.card-wrapper .card {
+   border-radius: 12px;
+}
+
+.card-wrapper img {
+   border-radius: 12px 12px 0 0;
+}
+
+.card .card__heading {
+   font-size: 2rem;
+}

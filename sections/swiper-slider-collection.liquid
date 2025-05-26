@@ -15,19 +15,12 @@
         <div class="swiper-wrapper">
           {% for product in products limit: 10 %}
             <div class="swiper-slide">
-              <a href="{{ product.url }}">
-                <div>
-                  <img
-                    src="{{ product.featured_image | image_url: height: 1000 }}"
-                    alt="{{ product.title }}"
-                    width="100%"
-                    height="auto"
-                    loading="lazy"
-                  >
-                  {% render 'bestseller-badge', product: product %}
-                </div>
-                <p>{{ product.title }}</p>
-              </a>
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'adapt',
+                show_secondary_image: true,
+                skip_styles: false
+              %}
             </div>
           {% endfor %}
         </div>
