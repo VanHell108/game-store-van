@@ -52,13 +52,12 @@
     "swiper-bestsellers": {
       "type": "swiper-slider-collection",
       "settings": {
-        "swiper_title": "Featured Collection",
+        "swiper_title": "Bestsellers",
         "collection": "bestsellers"
       }
     },
     "featured_collection": {
       "type": "featured-collection",
-      "name": "All Games",
       "settings": {
         "collection": "all",
         "products_to_show": 12,
