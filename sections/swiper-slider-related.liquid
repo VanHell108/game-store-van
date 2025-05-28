@@ -1,6 +1,7 @@
 {% assign current_product = product %}
 {% assign related_products = section.settings.collection.products %}
 {{ 'swiper-slider.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-slider-rel-fix.css' | asset_url | stylesheet_tag }}
 
 <div class="swiper-wrapper-container">
   <div class="swiper mySwiper">

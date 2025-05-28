@@ -1,4 +1,4 @@
-.card-wrapper .card {
+.card-wrapper {
    border-radius: 12px;
 }
 
@@ -8,4 +8,8 @@
 
 .card .card__heading {
    font-size: 2rem;
+}
+
+.card .card__heading a {
+   text-decoration: none;
 }
