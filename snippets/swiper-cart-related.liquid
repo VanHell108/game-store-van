@@ -1,0 +1,29 @@
+{% assign current_product = product %}
+{% assign related_products = section.settings.collection.products %}
+{{ 'swiper-cart.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'swiper-slider-rel-fix.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+<div class="cart-swiper-wrapper-container">
+  <div class="cart-swiper swiper cartSwiper">
+    {% if section.settings.cart_related_swiper_title != blank %}
+      <div>
+        <h3 class="cart-swiper-title">
+          {{ section.settings.cart_related_swiper_title }}
+        </h3>
+      </div>
+    {% endif %}
+    <div class="cart-swiper-wrapper swiper-wrapper">
+      {% for product in related_products %}
+        {% if product.id != current_product.id and product.tags contains current_product.tags[0] %}
+          <div class="cart-swiper-slide swiper-slide">
+            {% render 'card-product', card_product: product, media_aspect_ratio: 'adapt', skip_styles: false %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="cart-swiper-button-next swiper-button-next"></div>
+  <div class="cart-swiper-button-prev swiper-button-prev"></div>
+</div>
+
+<script src="{{ 'swiper-cart.js' | asset_url }}" defer="defer"></script>

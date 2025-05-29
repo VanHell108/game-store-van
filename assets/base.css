@@ -3599,3 +3599,13 @@ details-disclosure > details {
 .thumbnail-list__item.slider__slide:first-child {
   display: none;
 }
+
+.cart-drawer,
+.cart-sidebar {
+   overflow-y: auto;
+   max-height: 100vh;
+}
+
+.cart-content {
+   padding-bottom: 100px;
+}

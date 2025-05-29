@@ -138,6 +138,13 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
+          "cart_related_swiper_title": "You Might Also Like",
+          "collection": "all-games"
+        }
       }
     },
     "content_for_index": [],

@@ -1,1 +1,25 @@
 {%- render 'cart-drawer' -%}
+
+{% schema %}
+{
+  "name": "Cart Related Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cart_related_swiper_title",
+      "label": "Cart Title",
+      "default": "You Might Also Like"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose a collection to pull related products from"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Swiper Cart (Related Products)"
+    }
+  ]
+}
+{% endschema %}
