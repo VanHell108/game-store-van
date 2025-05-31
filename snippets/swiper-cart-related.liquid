@@ -1,7 +1,6 @@
-{% assign current_product = product %}
 {% assign related_products = section.settings.collection.products %}
 {{ 'swiper-cart.css' | asset_url | stylesheet_tag }}
-{% comment %} {{ 'swiper-slider-rel-fix.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{{ 'swiper-slider-rel-fix.css' | asset_url | stylesheet_tag }}
 
 <div class="cart-swiper-wrapper-container">
   <div class="cart-swiper swiper cartSwiper">
@@ -14,11 +13,35 @@
     {% endif %}
     <div class="cart-swiper-wrapper swiper-wrapper">
       {% for product in related_products %}
-        {% if product.id != current_product.id and product.tags contains current_product.tags[0] %}
-          <div class="cart-swiper-slide swiper-slide">
-            {% render 'card-product', card_product: product, media_aspect_ratio: 'adapt', skip_styles: false %}
-          </div>
-        {% endif %}
+        {% assign show_product = false %}
+        {% assign already_in_cart = false %}
+
+        {% for cart_item in cart.items %}
+          {% if cart_item.product.id == product.id %}
+            {% assign already_in_cart = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% unless already_in_cart %}
+          {% for cart_item in cart.items %}
+            {% for cart_tag in cart_item.product.tags %}
+              {% if product.tags contains cart_tag %}
+                {% assign show_product = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% if show_product %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          
+          {% if show_product %}
+            <div class="cart-swiper-slide swiper-slide">
+              {% render 'card-product', card_product: product, media_aspect_ratio: 'adapt', skip_styles: false %}
+            </div>
+          {% endif %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
