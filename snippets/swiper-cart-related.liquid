@@ -35,10 +35,16 @@
               {% break %}
             {% endif %}
           {% endfor %}
-          
+
           {% if show_product %}
             <div class="cart-swiper-slide swiper-slide">
-              {% render 'card-product', card_product: product, media_aspect_ratio: 'adapt', skip_styles: false %}
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'adapt',
+                quick_add: 'standard',
+                horizontal_quick_add: true,
+                skip_styles: false
+              %}
             </div>
           {% endif %}
         {% endunless %}
