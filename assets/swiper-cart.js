@@ -1,8 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const cartSwiperContainer = document.querySelector('.cart-swiper-wrapper-container')
+let cartSwiperInstance;
 
+initializeSwiper = () => {
+  const cartSwiperContainer = document.querySelector('.cart-swiper-wrapper-container');
   if (cartSwiperContainer) {
-    new Swiper('.cartSwiper', {
+    cartSwiperInstance = new Swiper('.cartSwiper', {
       spaceBetween: 45,
       loop: true,
       slidesPerView: 1,
@@ -12,4 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+}
+
+destroyAndRenewSwiper = () => {
+  if (cartSwiperInstance) {
+    cartSwiperInstance.destroy(true, true);
+  }
+  initializeSwiper();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initializeSwiper();
 });

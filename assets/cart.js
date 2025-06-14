@@ -101,6 +101,7 @@ class CartItems extends HTMLElement {
               targetElement.replaceWith(sourceElement);
             }
           }
+          destroyAndRenewSwiper();
         })
         .catch((e) => {
           console.error(e);
@@ -188,6 +189,7 @@ class CartItems extends HTMLElement {
               section.selector
             );
           });
+          destroyAndRenewSwiper();
           const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
           let message = '';
           if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
