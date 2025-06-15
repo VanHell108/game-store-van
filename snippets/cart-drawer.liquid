@@ -455,7 +455,14 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
+
       {% render 'swiper-cart-related' %}
+      <style>
+        .cart-swiper-wrapper-container{
+          display: {% if cart.items.size > 0 %}block{% else %}none{% endif %};
+        }
+      </style>
+
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
