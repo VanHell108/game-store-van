@@ -76,5 +76,15 @@
     border: 1px solid var(--color-button);
     transition: all 1.5s ease-in-out 0.5s;
     border-radius: 20px;
+    animation: fillBar 2s ease-out 0.5s both;
+  }
+
+  @keyframes fillBar {
+    from {
+      width: 0%;
+    }
+    to {
+      width: {{ progress }}%;
+    }
   }
 </style>
