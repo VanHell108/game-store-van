@@ -101,7 +101,7 @@ class CartItems extends HTMLElement {
               targetElement.replaceWith(sourceElement);
             }
           }
-          destroyAndRenewSwiper();
+          animatedDestroyAndRenewSwiper();
         })
         .catch((e) => {
           console.error(e);

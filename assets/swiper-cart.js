@@ -22,6 +22,28 @@ destroyAndRenewSwiper = () => {
   initializeSwiper();
 }
 
+animatedDestroyAndRenewSwiper = async () => {
+  const container = document.querySelector('.cart-swiper-wrapper-container');
+  
+  if (container) {
+    container.classList.add('reinitializing');
+
+    await new Promise(resolve => setTimeout(resolve, 50));
+  }
+
+  if (cartSwiperInstance) {
+    cartSwiperInstance.destroy(true, true);
+  }
+
+  initializeSwiper();
+
+  setTimeout(() => {
+    if (container) {
+      container.classList.remove('reinitializing');
+    }
+  }, 200);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initializeSwiper();
 });
