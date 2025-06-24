@@ -5,12 +5,41 @@
    max-width: 90%;
    margin: 0 auto 50px;
    z-index: 1;
-   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.cart-swiper-wrapper-container.reinitializing {
-  transform: scale(0.96);
-  opacity: 0.9;
+.cart-swiper-wrapper-container.reinitializing .cart-swiper {
+   visibility: hidden;
+}
+
+.cart-swiper-wrapper-container.reinitializing::before {
+   content: '';
+   position: absolute;
+   top: 40px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 300px;
+   height: 350px;
+   background:
+      linear-gradient(#d0d0d0, #d0d0d0) 0px 0px / 100% 130px,
+      linear-gradient(#b8b8b8, #b8b8b8) 0px 140px / 90% 12px,
+      linear-gradient(#b8b8b8, #b8b8b8) 0px 160px / 60% 8px;
+
+   background-repeat: no-repeat;
+   animation: skeleton-pulse 1.2s ease-in-out infinite alternate;
+   z-index: 10;
+   border-radius: 8px;
+}
+
+@keyframes skeleton-pulse {
+   0% {
+      opacity: 0.8;
+      filter: brightness(1);
+   }
+
+   100% {
+      opacity: 1;
+      filter: brightness(1.1);
+   }
 }
 
 .cart-swiper-wrapper-container .cart-swiper {
